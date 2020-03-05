@@ -2,9 +2,9 @@ version: '3'
 services:
 
   app-two:
-    image: test-first
+    image: docker-app-with-db-controller
     ports:
-      - 5050:4040
+      - 5051:4040
     depends_on:
       - db
   db:
@@ -20,11 +20,11 @@ services:
     volumes:
       - example:/var/lib/mysql
   app:
-    image: test
+    image: docker-app-with-link
     depends_on:
       - db
     ports:
-      - 5051:4040
+      - 5050:4040
 volumes:
   example:
 
