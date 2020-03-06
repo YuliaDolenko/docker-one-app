@@ -9,7 +9,7 @@ services:
     depends_on:
       - db
   db:
-    image: mysql:5.7
+    image: mysql
     container_name: docker-app-db
     restart: always
     environment:
@@ -18,7 +18,7 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_PASSWORD: 1234
     ports:
-      - '4444:3306'
+      - 4444:3306
     volumes:
       - example:/var/lib/mysql
   app:
